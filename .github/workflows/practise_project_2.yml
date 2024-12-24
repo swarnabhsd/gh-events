@@ -12,6 +12,7 @@ jobs:
               run: npm run lint
 
     Test:
+        needs: Lint
         runs-on: windows-latest
         steps:
             - name: Get Code
@@ -22,6 +23,7 @@ jobs:
               run: npm run test
 
     Deploy:
+        needs: Test
         runs-on: windows-latest
         steps:
             - name: Get Code
