@@ -3,6 +3,14 @@ on:
     pull_request:
         types: opened
     workflow_dispatch:
+    push:
+        branches:  #check workflow syntax doc.
+            - master
+            - 'dev-*'  # dev-new or dev-this-is new
+            - 'feat/**'  # feat-new or feat/new/spec
+        paths:
+            - '.github/workflows/*'  # we can use path or branches or tags.read more in doc. This means that if there are any changes
+            #in any file in this path and involves the above branches then push will happen otherwise NO.
 
 jobs:
     deploy:
