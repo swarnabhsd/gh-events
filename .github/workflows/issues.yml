@@ -1,8 +1,0 @@
-name: Handle Issues
-on: issues
-jobs:
-    output-info:
-        runs-on: windows-latest
-        steps:
-            - name: Output Event Details
-              run: echo "${{ github.event }}"
